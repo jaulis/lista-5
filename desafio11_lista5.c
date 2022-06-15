@@ -1,21 +1,10 @@
 #include <stdio.h>
 
-int CustoViagem(float comprimento,float distancia_pedagio,float custoKm,float custo_pedagio){
+int CustoViagem(int comprimento,int distancia_pedagio,int custoKm,int custo_pedagio){
 	
-	float custo_km,res,i,custoP,CustoTotal;
-	int NumP=0;
-	
-	custo_km = custoKm*comprimento;
-	
-	for (i=distancia_pedagio;i<=comprimento;i+=distancia_pedagio){
+	int CustoTotal;
 		
-		res = comprimento-i;
-		NumP++;
-		
-	}	
-	custoP = NumP*custo_pedagio;
-	
-	CustoTotal = custoP+custo_km;
+	CustoTotal = ((comprimento/distancia_pedagio)*custo_pedagio)+(custoKm*comprimento);
 	
 	return CustoTotal;
 }
@@ -23,23 +12,23 @@ int CustoViagem(float comprimento,float distancia_pedagio,float custoKm,float cu
 
 int main(){
 	
-	float DistP,Compri,CustoKM,CustoP,CustoTotal;
+	int DistP,Compri,CustoKM,CustoP,CustoTotal;
 	
 	printf("Digite o comprimento da estrada: ");
-	scanf("%f",&Compri);
+	scanf("%d",&Compri);
 	
 	printf("Digite a distancia entre cada pedagio: ");
-	scanf("%f",&DistP);
+	scanf("%d",&DistP);
 	
 	printf("Digite o custo por km: ");
-	scanf("%f",&CustoKM);
+	scanf("%d",&CustoKM);
 	
 	printf("Digite o custo do pedagio: ");
-	scanf("%f",&CustoP);
+	scanf("%d",&CustoP);
 	
 	CustoTotal = CustoViagem(Compri,DistP,CustoKM,CustoP);
 	
-	printf("O custo total da viagem eh de: %.2f",CustoTotal);
+	printf("O custo total da viagem eh de: %d",CustoTotal);
 	
 	return 0;
 }
