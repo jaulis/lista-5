@@ -19,7 +19,7 @@ int main(){
 	
 	int res,fatora;
 	
-	printf("escreva um numero para a operação fatorial:");	
+	printf("escreva um numero para a operaÃ§Ã£o fatorial:");	
 	scanf("%d",&fatora);
 	
 	res = fat(fatora);
